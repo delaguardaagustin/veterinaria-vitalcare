@@ -319,5 +319,28 @@ footer a{text-decoration:none;color:#fff}
 if(L.getItem('soy-de-la-casa')||S.getItem('visita-contada'))return;S.setItem('visita-contada','1');
 var s=location.pathname.split('/').filter(Boolean)[0]||'',c=JSON.stringify({s:s});if(!s)return;
 if(navigator.sendBeacon)navigator.sendBeacon('https://n8n-production-003b9.up.railway.app/webhook/visita',c);else fetch('https://n8n-production-003b9.up.railway.app/webhook/visita',{method:'POST',body:c,keepalive:true});}catch(e){}})();</script>
+<style>
+#quien-hizo-btn{position:fixed;left:14px;bottom:14px;z-index:9998;background:#0c0f12;color:#f2f4f6;border:1px solid #d8ac54;border-radius:999px;padding:10px 15px;font:600 .84rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;box-shadow:0 10px 26px -12px rgba(0,0,0,.6);cursor:pointer}
+#quien-hizo-btn b{color:#d8ac54}
+@media (max-width:760px){#quien-hizo-btn{bottom:150px;left:10px;padding:9px 13px;font-size:.8rem}}
+#quien-hizo{border:0;border-radius:20px;padding:0;width:min(460px,calc(100% - 24px));max-height:calc(100% - 40px);background:#0c0f12;color:#e9edf1;font:400 .95rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+#quien-hizo::backdrop{background:rgba(0,0,0,.6)}
+#quien-hizo .qh{padding:22px 20px 18px}#quien-hizo h3{margin:0 0 6px;font-size:1.18rem;color:#fff}#quien-hizo h4{margin:18px 0 8px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#d8ac54}
+#quien-hizo p{margin:0;color:#c3cbd3}#quien-hizo ol{margin:0;padding-left:20px;color:#c3cbd3}#quien-hizo li{margin:4px 0}#quien-hizo li b,#quien-hizo p b{color:#fff}
+.qh-cli{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;margin:6px 0;border:1px solid #26303a;border-radius:12px;color:#fff;text-decoration:none}.qh-cli span{color:#8f9aa5;font-size:.82rem;text-align:right}.qh-cli:hover{border-color:#d8ac54}
+.qh-bot{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.qh-bot a,.qh-bot button{flex:1 1 auto;text-align:center;border-radius:999px;padding:11px 14px;font:700 .9rem/1 system-ui,sans-serif;text-decoration:none;cursor:pointer;border:1px solid #3a4651;background:transparent;color:#e9edf1}
+.qh-bot .si{background:#25d366;border-color:#25d366;color:#06280f}.qh-no{display:block;margin-top:12px;color:#8f9aa5;font-size:.84rem;text-align:center}
+</style>
+<button id="quien-hizo-btn" type="button" onclick="document.getElementById('quien-hizo').showModal()">¿Quién hizo <b>esta página</b>?</button>
+<dialog id="quien-hizo" aria-label="Quién hizo esta página"><div class="qh">
+  <h3>Hola, soy Agustín, de SENTRY-CODE</h3>
+  <p>Armé esta página con las fotos y las opiniones que ya son públicas en la ficha de Google de <b>VitalCare</b>, para que la vea funcionando antes de decidir. No tiene que pagar nada para verla.</p>
+  <h4>Ya confiaron en nosotros</h4><a class="qh-cli" href="https://www.vivasushi.cl/" target="_blank" rel="noopener"><b>Viva Sushi</b><span>San Ramón · pedidos por WhatsApp</span></a><a class="qh-cli" href="https://www.transportesobelisco.cl/" target="_blank" rel="noopener"><b>Transportes Obelisco</b><span>Santiago · fletes y mudanzas</span></a><a class="qh-cli" href="https://residenciaseniorwall.cl/" target="_blank" rel="noopener"><b>Residencia Senior Wall</b><span>San Carlos · residencia</span></a><a class="qh-cli" href="https://festivalpewmaantu.cl/" target="_blank" rel="noopener"><b>Festival Pewma Antü</b><span>La Cisterna · festival folclórico</span></a>
+  <h4>Cómo funciona</h4>
+  <ol><li>Me dice qué le cambiaría: textos, fotos, colores, servicios.</li><li>La publico con su propio dominio .cl en 48 horas.</li><li><b>Paga recién cuando la ve publicada:</b> $120.000, una sola vez. Sin mensualidad obligatoria.</li></ol>
+  <h4>Incluye</h4><p>Dominio por un año, 3 meses de cambios sin costo y la placa para que sus clientes le dejen reseñas en Google.</p>
+  <div class="qh-bot"><a class="si" href="https://wa.me/56974479565?text=Hola%20Agust%C3%ADn%2C%20vi%20la%20p%C3%A1gina%20de%20muestra%20de%20VitalCare" target="_blank" rel="noopener">Hablar con Agustín</a><a href="https://sentry-code.cl/nosotros/" target="_blank" rel="noopener">Quiénes somos</a><button type="button" onclick="this.closest('dialog').close()">Cerrar</button></div>
+  <a class="qh-no" href="https://wa.me/56974479565?text=Hola%20Agust%C3%ADn%2C%20por%20ahora%20no%20me%20interesa%20la%20p%C3%A1gina%20de%20VitalCare.%20Puedes%20borrarla." target="_blank" rel="noopener">¿No le interesa? Avíseme y la borro.</a>
+</div></dialog>
 </body>
 </html>
